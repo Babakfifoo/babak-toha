@@ -1,3 +1,6 @@
+baseURL: babakfi.foo
+
+
 module:
   hugoVersion:
     min: "0.128.0"
@@ -23,3 +26,66 @@ module:
     target: static/files
   - source: ../../node_modules/katex/dist/fonts
     target: static/fonts
+  imports:
+  - path: github.com/hugo-toha/toha/v4
+
+
+
+analytics:
+  enabled: false
+
+newsletter:
+  enable: false
+
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+
+
+# Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
+# DefaultContentLanguage: bn
+
+# Allow raw html in markdown file
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false
+
+# At least HTML and JSON are required for the main HTML content and
+# client-side JavaScript search
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# Enable global emoji support
+enableEmoji: true
+
+# Site parameters
+params:
+  # GitHub repo URL of your site
+  gitRepo: https://github.com/Babakfifoo/babak-toha.git
+
+  features:
+    # Enable portfolio section
+    portfolio:
+      enable: true
+
+    # Enable blog posts
+    blog:
+      enable: true
+
+    # Enable Table of contents in reading page
+    toc:
+      enable: true
+
+  # Configure footer
+  footer:
+    enable: true
